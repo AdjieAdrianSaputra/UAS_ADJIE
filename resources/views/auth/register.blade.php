@@ -44,6 +44,10 @@
             </span>
           @enderror
         </div>
+        <div class="form-group col-md-6">
+            <label for="password-confirm">Confirm Password</label>
+            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+          </div>
       </div>
       <div class="form-group">
         <label for="nama">Email</label>
