@@ -4,8 +4,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BarangController;
 
-Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 /*
@@ -26,5 +26,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/daftar_barang', [BarangController::class, 'index'])->name('daftar_barang')->middleware('auth');
 

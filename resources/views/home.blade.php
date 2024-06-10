@@ -40,7 +40,7 @@
                     <a class="nav-link mr-4" href="{{ route('home') }}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="('daftar_menu') }}">DAFTAR MENU</a>
+                    <a class="nav-link mr-4" href="{{ route('daftar_barang') }}">DAFTAR BARANG</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-4" href="('pesanan') }}">PESANAN</a>
@@ -54,7 +54,7 @@
 </nav>
 <!-- Akhir Navbar -->
 
-<!-- Menu -->    
+<!-- Barang -->    
 <div class="container">
     <div class="judul text-center mt-5">
         <h3 class="font-weight-bold">Penyewaan Alat Piknik BNA</h3>
@@ -65,9 +65,9 @@
     <div class="row mb-5 mt-5">
         <div class="col-md-6 d-flex justify-content-end">
             <div class="card bg-dark text-white border-light">
-                <img src="{{ asset('images/background/bg1.jpg') }}" class="card-img" alt="Lihat Daftar Menu">
+                <img src="{{ asset('images/background/bg1.jpg') }}" class="card-img" alt="Lihat Daftar Barang">
                 <div class="card-img-overlay mt-5 text-center">
-                    <a href="('daftar_menu') }}" class="btn btn-primary">LIHAT DAFTAR MENU</a>
+                    <a href="{{ route('daftar_barang') }}" class="btn btn-primary">LIHAT DAFTAR BARANG</a>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
         </div>
     </div>
 </div>
-<!-- Akhir Menu -->
+<!-- Akhir Barang -->
 
 <!-- Awal Footer -->
 <hr class="footer">
