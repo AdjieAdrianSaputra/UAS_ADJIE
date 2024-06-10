@@ -9,8 +9,8 @@ class BarangController extends Controller
 {
     public function index()
     {
-        $produk = Produk::all();
-        return view('barang.daftar_barang', compact('produk'));
+        $produks = Produk::all();
+        return view('barang.daftar_barang', compact('produks'));
     }
 
     public function create()
@@ -30,4 +30,5 @@ class BarangController extends Controller
         $produk->delete();
         return redirect()->route('daftar_barang')->with('success', 'Barang berhasil dihapus');
     }
+
 }

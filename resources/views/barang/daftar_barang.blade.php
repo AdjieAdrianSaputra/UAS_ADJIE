@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-    <a href="('tambah_barang') }}" class="btn btn-success mt-3">TAMBAH DAFTAR BARANG</a>
+  <a href="{{ route('barang.tambah_barang') }}" class="btn btn-success mt-3">Tambah Daftar Barang</a>
     <div class="row">
 
-      @foreach($produk as $item)
+      @foreach($produks as $item)
       <div class="col-md-3 mt-4">
         <div class="card border-dark">
-          <img src="{{ asset('upload/' . $item->gambar) }}" class="card-img-top" alt="...">
+          <img src="{{ asset('uploads/' . $item->gambar) }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title font-weight-bold">{{ $item->nama_barang }}</h5>
             <label class="card-text harga"><strong>Rp.</strong> {{ number_format($item->harga) }}</label><br>
