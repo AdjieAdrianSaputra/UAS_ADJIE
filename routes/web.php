@@ -39,7 +39,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(
 Route::get('/daftar_barang', [BarangController::class, 'index'])->name('daftar_barang');
 Route::get('/tambah-barang', [BarangController::class, 'create'])->name('barang.tambah_barang');
 Route::post('/simpan-barang', [ProdukController::class, 'store'])->name('barang.simpan_barang');
-Route::get('/edit_barang', [BarangController::class, 'edit'])->name('edit_barang');
-Route::delete('/hapus_barang', [BarangController::class, 'destroy'])->name('hapus_barang');
+Route::get('/barang/{id}/edit-barang', [BarangController::class, 'edit'])->name('barang.edit_barang');
+Route::put('/barang/{id}', [ProdukController::class, 'update'])->name('barang.update');
+Route::get('/barang', [ProdukController::class, 'index'])->name('barang.index');
+Route::delete('/barang/{id}', [ProdukController::class, 'destroy'])->name('barang.destroy');
 
 
