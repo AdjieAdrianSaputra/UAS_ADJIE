@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,10 +26,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/login', [LoginController::class, 'login']);
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/daftar_barang', [BarangController::class, 'index'])->name('daftar_barang');
 Route::get('/tambah-barang', [BarangController::class, 'create'])->name('barang.tambah_barang');
