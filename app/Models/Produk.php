@@ -9,5 +9,5 @@ class Produk extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['nama_barang', 'harga', 'gambar'];
+    protected $guarded = ['nama_barang', 'jenis_barang', 'stok', 'harga', 'gambar'];
 }
