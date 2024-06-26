@@ -43,7 +43,7 @@
                     <a class="nav-link mr-4" href="{{ route('daftar_barang') }}">DAFTAR BARANG</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="('pesanan') }}">PESANAN</a>
+                    <a class="nav-link mr-4" href="{{ route('pesanan.index') }}">PESANAN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-4" href="('logout') }}">LOGOUT</a>
