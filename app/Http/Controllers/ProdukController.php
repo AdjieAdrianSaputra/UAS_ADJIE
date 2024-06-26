@@ -11,8 +11,8 @@ class ProdukController extends Controller
     {
         $request->validate([
             'nama_barang' => 'required|string|max:255',
-            //'jenis_barang' => 'required|string',
-            //'stok' => 'required|numeric',
+            'jenis_barang' => 'required|string',
+            'stok' => 'required|numeric',
             'harga' => 'required|numeric',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,',
         ]);
@@ -23,8 +23,8 @@ class ProdukController extends Controller
         // Simpan path gambar ke database
         $produk = new Produk();
         $produk->nama_barang = $request->nama_barang;
-        //$produk->jenis_barang = $request->jenis_barang;
-        //$produk->stok = $request->stok;
+        $produk->jenis_barang = $request->jenis_barang;
+        $produk->stok = $request->stok;
         $produk->harga = $request->harga;
         $produk->gambar = $path;
         $produk->save();
@@ -36,16 +36,16 @@ class ProdukController extends Controller
     {
         $request->validate([
             'nama_barang' => 'required|string|max:255',
-            //'jenis_barang' => 'required|string',
-            //'stok' => 'required|numeric',
+            'jenis_barang' => 'required|string',
+            'stok' => 'required|numeric',
             'harga' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $barang = Produk::find($id);
         $barang->nama_barang = $request->nama_barang;
-        //$barang->jenis_barang = $request->jenis_barang;
-        //$barang->stok = $request->stok;
+        $barang->jenis_barang = $request->jenis_barang;
+        $barang->stok = $request->stok;
         $barang->harga = $request->harga;
 
         if ($request->hasFile('gambar')) {
