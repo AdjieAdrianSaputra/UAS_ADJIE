@@ -52,7 +52,7 @@
                     <a class="nav-link mr-4" href="{{ route('pesanan.index') }}">PESANAN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="('logout') }}">LOGOUT</a>
+                    <a class="nav-link mr-4" href="{{ route('logout') }}">LOGOUT</a>
                 </li>
             </ul>
         </div>

@@ -75,7 +75,13 @@
                     <a class="nav-link mr-4" href="{{ route('pesanan.index') }}">PESANAN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="('logout') }}">LOGOUT</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a class="nav-link mr-4" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        LOGOUT
+                    </a>
                 </li>
                 <li class="nav-item profile">
                     <img class="nav-link mr-" src="{{ asset('images/background/bg2.jpg') }}" alt="">
