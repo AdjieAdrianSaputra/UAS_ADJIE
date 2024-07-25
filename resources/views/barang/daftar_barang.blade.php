@@ -7,10 +7,26 @@
     <title>Daftar Barang</title>
 
     <style>
+        body {
+            background: linear-gradient(120deg, #000000, #434343);
+            color: #ffffff;
+        }
+        .jumbotron {
+            background: linear-gradient(120deg, #434343, #000000);
+            color: #ffffff;
+        }
+        .card {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .navbar {
+            background: linear-gradient(120deg, #000000, #434343);
+        }
+
       .card-img-top {
           width: 100%;
           height: 200px;
           object-fit: fill;
+
       }
   </style>
 

@@ -11,6 +11,35 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome/css/all.min.css') }}">
 
+    <style>
+        body {
+            background: linear-gradient(120deg, #000000, #434343);
+            color: #ffffff;
+        }
+        .jumbotron {
+            background: linear-gradient(120deg, #434343, #000000);
+            color: #ffffff;
+        }
+        .card {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .navbar {
+            background: linear-gradient(120deg, #000000, #434343);
+        }}
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile img {
+            width: 50px; /* Adjust the size as needed */
+            height: 50px; /* Adjust the size as needed */
+            border-radius: 50%;
+            /* border: 2px solid #fff; Optional: Add a border around the image */
+            margin-right: 20px;
+        }
+    </style>
+
     <title>Alat Piknik BNA</title>
 </head>
 <body>
@@ -20,8 +49,8 @@
     <div class="container">
         <h1 class="display-4"><span class="font-weight-bold">PENYEWAAN ALAT PIKNIK BNA</span></h1>
         <hr>
-        <p class="lead font-weight-bold">Bersantailah Dunia Terlalu Melelahkan <br> 
-        Enjoy Your Life</p>
+        <p class="lead font-weight-bold"><i> Bersantailah Dunia Terlalu Melelahkan<br> 
+        Enjoy Your Life</i></p>
     </div>
 </div>
 <!-- Akhir Jumbotron -->
@@ -48,6 +77,10 @@
                 <li class="nav-item">
                     <a class="nav-link mr-4" href="('logout') }}">LOGOUT</a>
                 </li>
+                <li class="nav-item profile">
+                    <img class="nav-link mr-" src="{{ asset('images/background/bg2.jpg') }}" alt="">
+                    {{-- <span>{{ Auth::user()->status }}</span> --}}
+                </li>
             </ul>
         </div>
     </div> 
@@ -58,8 +91,8 @@
 <div class="container">
     <div class="judul text-center mt-5">
         <h3 class="font-weight-bold">Penyewaan Alat Piknik BNA</h3>
-        <h5>Setui, Banda Aceh, Aceh
-        <br>Buka Jam <strong>10:00 - 22:00</strong></h5>
+        <h5><i>Setui, Banda Aceh, Aceh
+        <br> Buka Jam <strong><u> 10:00 - 22:00</strong></u></i></h5>
     </div>
 
     <div class="row mb-5 mt-5">

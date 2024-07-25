@@ -16,16 +16,6 @@
     <title>Alat Piknik BNA</title>
   </head>
   <body>
-  <!-- Jumbotron -->
-      <div class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-          <h1 class="display-4"><span class="font-weight-bold">PENYEWAAN ALAT PIKNIK BNA</span></h1>
-          <hr>
-          <p class="lead font-weight-bold">Bersantailah Dunia Terlalu Melelahkan <br> 
-          Enjoy Your Life</p>
-        </div>
-      </div>
-  <!-- Akhir Jumbotron -->
 
   <!-- Navbar -->
       <nav class="navbar navbar-expand-lg  bg-dark">
@@ -38,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link mr-4" href="{{ url('/admin') }}">HOME</a>
+              <a class="nav-link mr-4" href="{{ url('/home') }}">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-4" href="{{ url('/daftar_barang') }}">DAFTAR BARANG</a>
