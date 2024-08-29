@@ -10,25 +10,24 @@ class BarangController extends Controller
     public function index()
     {
         $produks = Produk::all();
-        return view('barang.daftar_barang', compact('produks'));
+        return view('admin.daftar_barang', compact('produks'));
     }
 
     public function create()
     {
-        return view('barang.tambah_barang');
+        return view('admin.tambah_barang');
     }
 
     public function edit($id)
     {
         $produk = Produk::find($id);
-        return view('barang.edit_barang', compact('produk'));
+        return view('admin.edit_barang', compact('produk'));
     }
 
     public function destroy($id)
     {
         $produk = Produk::find($id);
         $produk->delete();
-        return redirect()->route('daftar_barang')->with('success', 'Barang berhasil dihapus');
+        return redirect()->route('admin.daftar_barang')->with('success', 'Barang berhasil dihapus');
     }
-
 }

@@ -14,7 +14,7 @@
 <div class="container">
     <h3 class="text-center mt-3 mb-5">SILAHKAN EDIT BARANG</h3>
     <div class="card p-5 mb-5">
-        <form method="POST" action="{{ route('barang.update', $produk->id) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin.barang.update', $produk->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">

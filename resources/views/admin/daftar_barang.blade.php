@@ -35,7 +35,7 @@
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container">
-        <a class="navbar-brand text-white" href="{{ route('home') }}"><strong>Alat</strong> Piknik BNA</a>
+        <a class="navbar-brand text-white" href="{{ route('admin.home') }}"><strong>Alat</strong> Piknik BNA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,16 +43,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="{{ route('home') }}">HOME</a>
+                    <a class="nav-link mr-4" href="{{ route('admin.home') }}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="{{ route('daftar_barang') }}">DAFTAR BARANG</a>
+                    <a class="nav-link mr-4" href="{{ route('admin.daftar_barang') }}">DAFTAR BARANG</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-4" href="{{ route('pesanan.index') }}">PESANAN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="{{ route('logout') }}">LOGOUT</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a class="nav-link mr-4" href="{{ route('logout') }}"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                       LOGOUT
+                    </a>
                 </li>
             </ul>
         </div>
@@ -74,7 +80,7 @@
                         <h5 class="card-title">{{ $produk->nama_barang }}</h5>
                         <p class="card-text">Rp. {{ $produk->harga }}</p>
                         <a href="{{ route('barang.edit_barang', $produk->id) }}" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('barang.destroy', $produk->id) }}" method="POST" class="d-inline">
+                        <form action="{{ route('admin.barang.destroy', $produk->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Hapus</button>

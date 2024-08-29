@@ -9,5 +9,18 @@ class Produk extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['nama_barang', 'jenis_barang', 'stok', 'harga', 'gambar'];
+    protected $table = 'produks';
+
+    protected $fillable = [
+        'nama_barang',
+        'jenis_barang',
+        'stok',
+        'harga',
+        'gambar'
+    ];
+
+    public function pemesanan()
+    {
+        return $this->hasMany(Pemesanan::class, 'produk_id' , 'id');
+    }
 }

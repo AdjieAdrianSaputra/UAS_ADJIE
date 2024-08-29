@@ -67,7 +67,9 @@ class Kernel extends HttpKernel
     ];
 
     protected $routeMiddleware = [
-        // ...
+    
         'status' => \App\Http\Middleware\Status::class,
+        'status' => \App\Http\Middleware\CheckStatus::class,
+
     ];
 }

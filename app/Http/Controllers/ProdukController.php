@@ -29,7 +29,7 @@ class ProdukController extends Controller
         $produk->gambar = $path;
         $produk->save();
 
-        return redirect()->route('daftar_barang')->with('success', 'Barang berhasil ditambahkan');
+        return redirect()->route('admin.daftar_barang')->with('success', 'Barang berhasil ditambahkan');
     }
 
     public function update(Request $request, $id)
@@ -55,6 +55,13 @@ class ProdukController extends Controller
 
         $barang->save();
 
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil diupdate');
+        return redirect()->route('admin.barang.index')->with('success', 'Barang berhasil diupdate');
+    }
+    public function destroy($id)
+    {
+        $produk = Produk::findOrFail($id);
+        $produk->delete();
+
+        return redirect()->route('admin.daftar_barang')->with('success', 'Produk berhasil dihapus.');
     }
 }

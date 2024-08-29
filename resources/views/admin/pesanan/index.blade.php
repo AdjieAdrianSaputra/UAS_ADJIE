@@ -34,7 +34,7 @@
               <a class="nav-link mr-4" href="{{ url('/daftar_barang') }}">DAFTAR BARANG</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-4" href="{{ route('pesanan.index') }}">PESANAN</a>
+              <a class="nav-link mr-4" href="{{ url('/pesanan.index') }}">PESANAN</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-4" href="{{ url('/logout') }}">LOGOUT</a>
@@ -68,12 +68,14 @@
             <td>{{ $result->tanggal_pemesanan }}</td>
             <td>Rp. {{ number_format($result->total_belanja) }}</td>
             <td>
-              <a href="{{ route('pesanan.detail', $result->id) }}" class="badge badge-primary">Detail</a>
-              <form action="{{ route('pesanan.destroy', $result->id) }}" method="POST" class="d-inline">
+              <a href="{{ route('admin.pesanan.detail', $result->id) }}" class="badge badge-primary">Detail</a>
+
+              <form action="{{ route('admin.pesanan.destroy', $result->id) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="badge badge-danger">Hapus Data</button>
-              </form>
+            </form>
+            
             </td>
           </tr>
           @endforeach

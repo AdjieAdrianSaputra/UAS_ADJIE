@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -26,26 +27,51 @@ class LoginController extends Controller
      *
      * @var string
      */
-
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home'; // Default redirect
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
-    public function logout(Request $request)
+    /**
+     * Handle the post-login redirection.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    protected function authenticated(Request $request, $user)
     {
-        $this->guard()->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        // Redirect based on user status
+        if ($user->status == 'admin') {
+            return redirect()->route('admin.home'); // Redirect to admin home
+        } elseif ($user->status == 'user') {
+            return redirect()->route('user.dashboard'); // Redirect to user pesanan
+        }
 
-        return redirect('/login');
+        // Default redirect if the status is unknown
+        return redirect($this->redirectTo);
     }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+{
+    Auth::logout();
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/');
+}
 }
